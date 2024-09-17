@@ -1,2 +1,1 @@
-A simple raycaster made using my own graphics library Unspritable
-"# Wave-Function-Collapse-using-Unspritable" 
+A simple wave function collapse demo using my own graphics engine, Unspritable
