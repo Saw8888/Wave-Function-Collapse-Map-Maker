@@ -1,0 +1,9 @@
+{
+ "files.associations": {
+  "freeglut.h": "c",
+  "ggd.h": "c",
+  "stdio.h": "c",
+  "glfw3.h": "c",
+  "cmath": "c"
+ }
+}
