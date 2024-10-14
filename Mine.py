@@ -54,13 +54,13 @@ class tile:
 
 grid = [[None for x in range(grid_x)] for y in range(grid_y)]
 
-grass = tile("Sprites/Grass")
-horizontal = tile("Sprites/Horizontal_Fence")
-vertical = tile("Sprites/Vertical_Fence")
-tl = tile("Sprites/Top_Left_Fence")
-tr = tile("Sprites/Top_Right_Fence")
-bl = tile("Sprites/Bottom_Left_Fence")
-br = tile("Sprites/Bottom_Right_Fence")
+grass = tile(r"Sprites\Grass.png")
+horizontal = tile(r"Sprites\Horizontal_Fence.png")
+vertical = tile(r"Sprites\Vertical_Fence.png")
+tl = tile(r"Sprites\Top_Left_Fence.png")
+tr = tile(r"Sprites\Top_Right_Fence.png")
+bl = tile(r"Sprites\Bottom_Left_Fence.png")
+br = tile(r"Sprites\Bottom_Right_Fence.png")
 
 horizontal.add_left([tl,bl])
 horizontal.add_right([tr,br])
@@ -106,32 +106,74 @@ def init_grid():
 def find_uncollapsed_cell():
     x_coord = random.randrange(grid_x)
     y_coord = random.randrange(grid_y)
+    while len(grid[y_coord][x_coord].possibilities) <= 1:
+       x_coord = random.randrange(grid_x)
+       y_coord = random.randrange(grid_y)
     for y in range(grid_y):
         for x in range(grid_x):
-            if len(grid[y][x].possibilities) < len(grid[y_coord][x_coord].possibilities):
+            if (len(grid[y][x].possibilities) < len(grid[y_coord][x_coord].possibilities)) and len(grid[y][x].possibilities)>1:
                 x_coord = x
                 y_coord = y
                 
-    print(grid[y_coord][x_coord].possibilities)
     return [x_coord, y_coord]
 
 def collapse_cell(coords):
-   x=coords[0]
-   y=coords[1]
-   tile = grid[y][x]
-   tile.file = random.choice(tile.possibilities)
-   for i in range(len(grid[y-1][x].possibilities)):
-      if grid[y-1][x].possibilities[i] not in tile.top:
-             grid[y-1][x].possibilities = grid[y-1][x].possibilities.pop(i)
-   for i in range(len(grid[y+1][x].possibilities)):
-      if grid[y+1][x].possibilities[i] not in tile.bottom:
-             grid[y+1][x].possibilities = grid[y+1][x].possibilities.pop(i)
-   for i in range(len(grid[y][x+1].possibilities)):
-      if grid[y][x+1].possibilities[i] not in tile.right:
-             grid[y][x+1].possibilities = grid[y][x+1].possibilities.pop(i)
-   for i in range(len(grid[y][x-1].possibilities)):
-      if grid[y][x-1].possibilities[i] not in tile.left:
-             grid[y][x-1].possibilities = grid[y][x-1].possibilities.pop(i)
+  x = coords[0]
+  y = coords[1]
+
+  # Collapse the selected cell by choosing one possibility
+  tile = grid[y][x]
+  print(tile.possibilities)
+  tile.file = random.choice(tile.possibilities)
+
+  # After collapsing, the possibilities for this tile are reduced to the chosen one
+  tile.possibilities = []
+
+  # Propagate constraints to neighboring cells
+  propagate(x, y)
+
+def propagate(x, y):
+    stack = [(x, y)]  # Stack for cells that need propagation
+
+    while stack:
+        cx, cy = stack.pop()  # Get the current cell
+        current_tile = grid[cy][cx]
+
+        # Check neighboring cells (top, bottom, left, right)
+        neighbors = [
+            (cx, cy - 1, current_tile.top),     # Top neighbor
+            (cx, cy + 1, current_tile.bottom),  # Bottom neighbor
+            (cx + 1, cy, current_tile.right),   # Right neighbor
+            (cx - 1, cy, current_tile.left)     # Left neighbor
+        ]
+
+        for nx, ny, valid_tiles in neighbors:
+            # Ensure the neighbor coordinates are within bounds
+            if 0 <= nx < grid_x and 0 <= ny < grid_y:
+                neighbor_tile = grid[ny][nx]
+
+                # Filter out invalid possibilities for the neighbor
+                new_possibilities = [
+                    tile for tile in neighbor_tile.possibilities if tile in valid_tiles
+                ]
+
+                # If the neighbor's possibilities have changed, update and propagate
+                if len(new_possibilities) < len(neighbor_tile.possibilities):
+                    if len(new_possibilities) == 0:
+                        # This means we've filtered too much and there are no valid possibilities left.
+                        # This should not happen in a properly functioning WFC algorithm.
+                        print(f"Error: Tile at ({nx}, {ny}) has no valid possibilities left!")
+                        return
+
+                    neighbor_tile.possibilities = new_possibilities
+
+                    # If the neighbor is down to one possibility, collapse it and continue propagation
+                    if len(neighbor_tile.possibilities) == 1:
+                        neighbor_tile.file = neighbor_tile.possibilities[0]
+                        neighbor_tile.possibilities = []  # Collapse the neighbor
+
+                    # Add neighbor to stack for further propagation
+                    stack.append((nx, ny))
 
 def draw_grid(grid):
   for y in range(grid_y):
@@ -142,7 +184,9 @@ def draw_grid(grid):
         screen.blit(img, (x*tile_x, y*tile_y))
       else:
         image = pygame.image.load(tile.file)
+        grass_image = pygame.image.load(grass.file)
         image = pygame.transform.scale(image, (tile_x,tile_y))
+        screen.blit(grass_image, (x*tile_x, y*tile_y))
         screen.blit(image, (x*tile_x, y*tile_y))
 
   for x in range(grid_x + 1): 
