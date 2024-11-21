@@ -2,13 +2,11 @@ import pygame
 import random
 import sys
 
-# Initialize Pygame
 pygame.init()
 
-# Define screen and grid size
 TILE_SIZE = 30
 grid_x, grid_y = 30,30
-# Create a screen
+
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 pygame.display.set_caption("Wave Function Collapse")
 
@@ -27,7 +25,6 @@ class Cell:
         self.collapsed = False
         self.options = []
 
-# Define all tile types as instances of the Cell class
 grass = Cell("grass", r"Sprites\Grass.png")
 horizontal = Cell("horizontal", r"Sprites\Horizontal_Fence.png")
 vertical = Cell("vertical", r"Sprites\Vertical_Fence.png")
@@ -36,7 +33,6 @@ tr = Cell("top-right", r"Sprites\Top_Right_Fence.png")
 bl = Cell("bottom-left", r"Sprites\Bottom_Left_Fence.png")
 br = Cell("bottom-right", r"Sprites\Bottom_Right_Fence.png")
 
-# Define adjacency rules
 horizontal.top = [grass, horizontal]
 horizontal.bottom = [grass, horizontal]
 horizontal.left = [tl, bl, horizontal]
@@ -74,7 +70,6 @@ grass.right = [grass, vertical, tl, bl]
 
 all_tiles = [grass, horizontal, vertical, tl, tr, bl, br]
 
-# Initialize the grid
 def init_grid():
     grid = [[Cell("") for _ in range(grid_x)] for _ in range(grid_y)]
     for y in range(grid_y):
