@@ -1,213 +1,169 @@
 import pygame
 import random
+import sys
 
+# Initialize Pygame
 pygame.init()
 
-pygame.font.init()
+# Define screen and grid size
+SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
+TILE_SIZE = 50
+grid_x, grid_y = SCREEN_WIDTH // TILE_SIZE, SCREEN_HEIGHT // TILE_SIZE
 
-font = pygame.font.SysFont(None, 30)
+# Create a screen
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Wave Function Collapse")
 
-WIDTH, HEIGHT = 1300, 700
-grid_x = 30
-grid_y = 30
-tile_x = 16
-tile_y = 16
+# Define the Cell class
+class Cell:
+    def __init__(self, name, image_path, top=None, bottom=None, left=None, right=None):
+        self.name = name
+        self.image = pygame.image.load(image_path)
+        self.image = pygame.transform.scale(self.image, (TILE_SIZE, TILE_SIZE))
+        self.top = top or []
+        self.bottom = bottom or []
+        self.left = left or []
+        self.right = right or []
+        self.collapsed = False
+        self.options = []  # This will be initialized in the grid setup
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+# Define all tile types as instances of the Cell class
+grass = Cell("grass", r"Sprites\Grass.png")
+horizontal = Cell("horizontal", r"Sprites\Horizontal_Fence.png")
+vertical = Cell("vertical", r"Sprites\Vertical_Fence.png")
+tl = Cell("top-left", r"Sprites\Top_Left_Fence.png")
+tr = Cell("top-right", r"Sprites\Top_Right_Fence.png")
+bl = Cell("bottom-left", r"Sprites\Bottom_Left_Fence.png")
+br = Cell("bottom-right", r"Sprites\Bottom_Right_Fence.png")
 
-pygame.display.set_caption("CS IA")
+# Define adjacency rules
+horizontal.top = [grass, horizontal]
+horizontal.bottom = [grass, horizontal]
+horizontal.left = [tl, bl, horizontal]
+horizontal.right = [tr, br, horizontal]
 
-possible_tiles = []
+vertical.top = [tl, tr, vertical]
+vertical.bottom = [bl, br, vertical]
+vertical.left = [grass, vertical]
+vertical.right = [grass, vertical]
 
-class tile:
-    global possible_tiles
-    def __init__(self, file):
-        self.file = file
-        self.right = []
-        self.left = []
-        self.bottom = []
-        self.top = []
-        self.possibilities = []
-        if file not in possible_tiles:
-         possible_tiles.append(file)
+tl.top = [grass, horizontal, br]
+tl.bottom = [vertical, bl, br]
+tl.left = [grass, vertical, br]
+tl.right = [horizontal, tr, br]
 
-    def add_right(self, neibour):
-        if(type(neibour) == list):
-            self.right.extend(neibour)
-        else:
-            self.right.append(neibour)
-    def add_left(self, neibour):
-        if(type(neibour) == list):
-            self.left.extend(neibour)
-        else:
-            self.left.append(neibour)
-    def add_bottom(self, neibour):
-        if(type(neibour) == list):
-            self.bottom.extend(neibour)
-        else:
-            self.bottom.append(neibour)
-    def add_top(self, neibour):
-        if(type(neibour) == list):
-            self.top.extend(neibour)
-        else:
-            self.top.append(neibour)
+tr.top = [grass, horizontal, bl]
+tr.bottom = [vertical, bl, br]
+tr.left = [tl, horizontal, br]
+tr.right = [horizontal, tr, bl]
 
-grid = [[None for x in range(grid_x)] for y in range(grid_y)]
+bl.top = [vertical, tl, tr]
+bl.bottom = [grass, tl, tr, horizontal]
+bl.left = [grass, vertical, br, tr]
+bl.right = [horizontal, tr, br]
 
-grass = tile(r"Sprites\Grass.png")
-horizontal = tile(r"Sprites\Horizontal_Fence.png")
-vertical = tile(r"Sprites\Vertical_Fence.png")
-tl = tile(r"Sprites\Top_Left_Fence.png")
-tr = tile(r"Sprites\Top_Right_Fence.png")
-bl = tile(r"Sprites\Bottom_Left_Fence.png")
-br = tile(r"Sprites\Bottom_Right_Fence.png")
+br.top = [vertical, tl, tr]
+br.bottom = [grass, horizontal, tl, tr]
+br.left = [horizontal, tl, bl]
+br.right = [grass, vertical, tl, bl]
 
-horizontal.add_left([tl,bl])
-horizontal.add_right([tr,br])
-horizontal.add_top([grass,horizontal])
-horizontal.add_bottom([grass,horizontal])
+grass.top = [grass, horizontal, bl, br]
+grass.bottom = [grass, horizontal, tl, tr]
+grass.left = [grass, vertical, tr, br]
+grass.right = [grass, vertical, tl, bl]
 
-vertical.add_left([grass,vertical])
-vertical.add_right([grass,vertical])
-vertical.add_top([tl,tr])
-vertical.add_bottom([bl,br])
+# Define the global list of all possible tiles
+all_tiles = [grass, horizontal, vertical, tl, tr, bl, br]
 
-tl.add_left([grass,vertical])
-tl.add_right([horizontal,tr,br])
-tl.add_top([grass,horizontal])
-tl.add_bottom([vertical, bl,br])
+# Initialize the grid with Cell instances
+class GridCell:
+    def __init__(self):
+        self.collapsed = False
+        self.options = all_tiles.copy()  # Initially, all tiles are possible
 
-tr.add_left([tl,horizontal,br])
-tr.add_right([horizontal,tr])
-tr.add_top([grass,horizontal])
-tr.add_bottom([vertical, bl,br])
+grid = [[GridCell() for _ in range(grid_x)] for _ in range(grid_y)]
 
-bl.add_left([grass,vertical])
-bl.add_right([horizontal,tl,tr])
-bl.add_top([vertical,tl,bl])
-bl.add_bottom([grass,vertical])
+# Helper functions for Wave Function Collapse
+def check_rules(x, y):
+    if x < 0 or x >= grid_x or y < 0 or y >= grid_y:
+        return None
+    return grid[y][x]
 
-br.add_left([horizontal,tl,tr])
-br.add_right([grass,vertical])
-br.add_top([vertical,tr,br])
-br.add_bottom([grass,vertical])
-
-grass.add_left([grass,vertical,tl,bl])
-grass.add_right([grass,vertical,tr,br])
-grass.add_top([grass,horizontal,tl,tr])
-grass.add_bottom([grass,horizontal,bl,br])
-
-def init_grid():
-    for y in range(grid_y):
-        for x in range(grid_x):
-            grid[y][x] = tile("")
-            grid[y][x].possibilities = possible_tiles
-
-def find_uncollapsed_cell():
-    x_coord = random.randrange(grid_x)
-    y_coord = random.randrange(grid_y)
-    while len(grid[y_coord][x_coord].possibilities) <= 1:
-       x_coord = random.randrange(grid_x)
-       y_coord = random.randrange(grid_y)
-    for y in range(grid_y):
-        for x in range(grid_x):
-            if (len(grid[y][x].possibilities) < len(grid[y_coord][x_coord].possibilities)) and len(grid[y][x].possibilities)>1:
-                x_coord = x
-                y_coord = y
-                
-    return [x_coord, y_coord]
-
-def collapse_cell(coords):
-  x = coords[0]
-  y = coords[1]
-
-  # Collapse the selected cell by choosing one possibility
-  tile = grid[y][x]
-  print(tile.possibilities)
-  tile.file = random.choice(tile.possibilities)
-
-  # After collapsing, the possibilities for this tile are reduced to the chosen one
-  tile.possibilities = []
-
-  # Propagate constraints to neighboring cells
-  propagate(x, y)
+def collapse_cell(x, y):
+    cell = grid[y][x]
+    cell.collapsed = True
+    cell.options = [random.choice(cell.options)]
 
 def propagate(x, y):
-    stack = [(x, y)]  # Stack for cells that need propagation
+    cell = grid[y][x]
+    if not cell.collapsed:
+        return
 
-    while stack:
-        cx, cy = stack.pop()  # Get the current cell
-        current_tile = grid[cy][cx]
+    tile = cell.options[0]  # The collapsed tile of this cell
 
-        # Check neighboring cells (top, bottom, left, right)
-        neighbors = [
-            (cx, cy - 1, current_tile.top),     # Top neighbor
-            (cx, cy + 1, current_tile.bottom),  # Bottom neighbor
-            (cx + 1, cy, current_tile.right),   # Right neighbor
-            (cx - 1, cy, current_tile.left)     # Left neighbor
-        ]
+    neighbors = {
+        "top": (x, y - 1, tile.top),
+        "bottom": (x, y + 1, tile.bottom),
+        "left": (x - 1, y, tile.left),
+        "right": (x + 1, y, tile.right)
+    }
 
-        for nx, ny, valid_tiles in neighbors:
-            # Ensure the neighbor coordinates are within bounds
-            if 0 <= nx < grid_x and 0 <= ny < grid_y:
-                neighbor_tile = grid[ny][nx]
+    for direction, (nx, ny, allowed_tiles) in neighbors.items():
+        if 0 <= nx < grid_x and 0 <= ny < grid_y:
+            neighbor = grid[ny][nx]
+            if neighbor.collapsed:
+                continue
 
-                # Filter out invalid possibilities for the neighbor
-                new_possibilities = [
-                    tile for tile in neighbor_tile.possibilities if tile in valid_tiles
-                ]
+            new_options = [opt for opt in neighbor.options if opt in allowed_tiles]
+            if len(new_options) < len(neighbor.options):
+                neighbor.options = new_options
 
-                # If the neighbor's possibilities have changed, update and propagate
-                if len(new_possibilities) < len(neighbor_tile.possibilities):
-                    if len(new_possibilities) == 0:
-                        # This means we've filtered too much and there are no valid possibilities left.
-                        # This should not happen in a properly functioning WFC algorithm.
-                        print(f"Error: Tile at ({nx}, {ny}) has no valid possibilities left!")
-                        return
+def find_lowest_entropy():
+    lowest_entropy = float('inf')
+    lowest_cell = None
+    for y in range(grid_y):
+        for x in range(grid_x):
+            cell = grid[y][x]
+            if not cell.collapsed and 1 < len(cell.options) < lowest_entropy:
+                lowest_entropy = len(cell.options)
+                lowest_cell = (x, y)
+    return lowest_cell
 
-                    neighbor_tile.possibilities = new_possibilities
+# Render the grid
+def draw_grid():
+    font = pygame.font.Font(None, 24)  # Set up font for displaying text
+    for y in range(grid_y):
+        for x in range(grid_x):
+            cell = grid[y][x]
+            if cell.collapsed:
+                tile = cell.options[0]
+                screen.blit(tile.image, (x * TILE_SIZE, y * TILE_SIZE))
+            else:
+                pygame.draw.rect(screen, (200, 200, 200), (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
+                # Show the number of possibilities (entropy) as text
+                text = font.render(str(len(cell.options)), True, (255, 255, 255))
+                screen.blit(text, (x * TILE_SIZE + TILE_SIZE // 4, y * TILE_SIZE + TILE_SIZE // 4))
 
-                    # If the neighbor is down to one possibility, collapse it and continue propagation
-                    if len(neighbor_tile.possibilities) == 1:
-                        neighbor_tile.file = neighbor_tile.possibilities[0]
-                        neighbor_tile.possibilities = []  # Collapse the neighbor
-
-                    # Add neighbor to stack for further propagation
-                    stack.append((nx, ny))
-
-def draw_grid(grid):
-  for y in range(grid_y):
-    for x in range(grid_x):
-      tile = grid[y][x]
-      if tile.file == "":
-        img = font.render(str(len(tile.possibilities)), True, (150,150,150))
-        screen.blit(img, (x*tile_x, y*tile_y))
-      else:
-        image = pygame.image.load(tile.file)
-        grass_image = pygame.image.load(grass.file)
-        image = pygame.transform.scale(image, (tile_x,tile_y))
-        screen.blit(grass_image, (x*tile_x, y*tile_y))
-        screen.blit(image, (x*tile_x, y*tile_y))
-
-  for x in range(grid_x + 1): 
-    pygame.draw.line(screen, (255,255,255), (x*tile_x, 0), (x*tile_x, grid_y*tile_y))
-
-  for y in range(grid_y + 1):
-    pygame.draw.line(screen, (255,255,255), (0, y*tile_y), (grid_x*tile_x, y*tile_y))
-
-init_grid()
+# Main game loop
 running = True
 while running:
     screen.fill((0, 0, 0))
-    
+    draw_grid()
+
+    # Wave Function Collapse step
+    lowest_entropy_cell = find_lowest_entropy()
+    if lowest_entropy_cell:
+        x, y = lowest_entropy_cell
+        collapse_cell(x, y)
+        propagate(x, y)
+
+    # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    draw_grid(grid)
-    collapse_cell(find_uncollapsed_cell())
-
     pygame.display.flip()
+    pygame.time.delay(50)
 
 pygame.quit()
-
+sys.exit()
