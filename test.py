@@ -2,18 +2,40 @@ import pygame
 import random
 import sys
 import math
+import json
+from tkinter import filedialog, Tk
 
 pygame.init()
 
-TILE_SIZE = 30
-grid_x, grid_y = 30,30
-
-screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+screen_x = 1080
+screen_y = 1080
+screen = pygame.display.set_mode((screen_x, screen_y))
 pygame.display.set_caption("Wave Function Collapse")
 
+TILE_SIZE = int(0.05 * screen_x)
+
+grid_x, grid_y = 20, 20
+
+RUN_BUTTON_POS = (int(0.85 * screen_x), int(0.15 * screen_y))
+RULESET_BUTTON_POS = (int(0.85 * screen_x), int(0.30 * screen_y))
+EXIT_BUTTON_POS = (int(0.15 * screen_x), int(0.15 * screen_y))
+SAVE_BUTTON_POS = (int(0.85 * screen_x), int(0.50 * screen_y))
+LOAD_BUTTON_POS = (int(0.85 * screen_x), int(0.65 * screen_y))
+
+SELECTION_X = int(0.10 * screen_x)
+SELECTION_WIDTH = int(0.11 * screen_x)
+SELECTION_HEIGHT = 400
+SELECTION_Y = (screen_y - SELECTION_HEIGHT) // 2
+
+scroll_offset = 0
+scroll_speed = 10
+is_scrolling = False
+
+tile_id_counter = 0
 
 class Cell:
-    def __init__(self, name, image_path=None, top=None, bottom=None, left=None, right=None):
+    def __init__(self, name, image_path=None,
+                 top=None, bottom=None, left=None, right=None):
         self.name = name
         self.image = None
         if image_path:
@@ -34,368 +56,67 @@ tr = Cell("top-right", r"Sprites\Top_Right_Fence.png")
 bl = Cell("bottom-left", r"Sprites\Bottom_Left_Fence.png")
 br = Cell("bottom-right", r"Sprites\Bottom_Right_Fence.png")
 
-horizontal.top = [grass, horizontal]
-horizontal.bottom = [grass, horizontal]
-horizontal.left = [tl, bl, horizontal]
-horizontal.right = [tr, br, horizontal]
-
-vertical.top = [tl, tr, vertical]
-vertical.bottom = [bl, br, vertical]
-vertical.left = [grass, vertical]
-vertical.right = [grass, vertical]
-
-tl.top = [grass, horizontal, br]
-tl.bottom = [vertical, bl, br]
-tl.left = [grass, vertical, br]
-tl.right = [horizontal, tr, br]
-
-tr.top = [grass, horizontal, bl]
-tr.bottom = [vertical, bl, br]
-tr.left = [tl, horizontal, br]
-tr.right = [horizontal, tr, bl]
-
-bl.top = [vertical, tl, tr]
-bl.bottom = [grass, tl, tr, horizontal]
-bl.left = [grass, vertical, br, tr]
-bl.right = [horizontal, tr, br]
-
-br.top = [vertical, tl, tr]
-br.bottom = [grass, horizontal, tl, tr]
-br.left = [horizontal, tl, bl]
-br.right = [grass, vertical, tl, bl]
-
-grass.top = [grass, horizontal, bl, br]
-grass.bottom = [grass, horizontal, tl, tr]
-grass.left = [grass, vertical, tr, br]
-grass.right = [grass, vertical, tl, bl]
-
 all_tiles = [grass, horizontal, vertical, tl, tr, bl, br]
 
-scroll_offset = 0  # Used for scrolling
-scroll_speed = 10  # Speed of scrolling when the user scrolls
-is_scrolling = False  # To track if the cursor is inside the rectangle
-
-# Track dragged tiles and placed tiles
-dragging_tile = None  # Holds the tile currently being dragged
-dragging_offset = (0, 0)  # Offset from mouse position to tile position
-placed_tiles = []  # List to store placed tiles with their positions
-
-def draw_tile_features(tile, x, y):
-    """Draw the circles and white outline for a tile, and detect edge clicks for arrows."""
-    global creating_arrow, arrow_start_tile, arrow_start_edge, arrow_start_pos
-
-    # Draw a white outline around the tile
-    pygame.draw.rect(screen, (255, 255, 255), (x, y, TILE_SIZE, TILE_SIZE), 2)
-
-    # Calculate the center points of each edge of the tile
-    center_top = (x + TILE_SIZE // 2, y)
-    center_bottom = (x + TILE_SIZE // 2, y + TILE_SIZE)
-    center_left = (x, y + TILE_SIZE // 2)
-    center_right = (x + TILE_SIZE, y + TILE_SIZE // 2)
-
-    # Edge mappings
-    edges = {
-        "top": center_top,
-        "bottom": center_bottom,
-        "left": center_left,
-        "right": center_right,
-    }
-
-    # Draw circles at the center of each edge and detect clicks
-    circle_color = (255, 0, 0)  # Red color for circles
-    circle_radius = 6
-
-    for edge, center in edges.items():
-        pygame.draw.circle(screen, circle_color, center, circle_radius)
-
-        # Detect clicks for arrow creation
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        circle_rect = pygame.Rect(center[0] - circle_radius, center[1] - circle_radius, circle_radius * 2, circle_radius * 2)
-        if circle_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0]:
-            if not creating_arrow:
-                # Start creating an arrow
-                creating_arrow = Arrow(tile, edge)
-                arrow_start_tile = tile
-                arrow_start_edge = edge
-                arrow_start_pos = center
-
-    # Draw the arrow currently being created
-    if creating_arrow:
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-
-        # If the mouse is over a valid end circle, snap to it
-        snapping_pos = None
-        for placed_tile, placed_x, placed_y in placed_tiles:
-            placed_center_top = (placed_x + TILE_SIZE // 2, placed_y)
-            placed_center_bottom = (placed_x + TILE_SIZE // 2, placed_y + TILE_SIZE)
-            placed_center_left = (placed_x, placed_y + TILE_SIZE // 2)
-            placed_center_right = (placed_x + TILE_SIZE, placed_y + TILE_SIZE // 2)
-
-            placed_edges = {
-                "top": placed_center_top,
-                "bottom": placed_center_bottom,
-                "left": placed_center_left,
-                "right": placed_center_right,
-            }
-
-            for end_edge, end_center in placed_edges.items():
-                end_circle_rect = pygame.Rect(end_center[0] - circle_radius, end_center[1] - circle_radius,
-                                              circle_radius * 2, circle_radius * 2)
-                if end_circle_rect.collidepoint(mouse_x, mouse_y):
-                    snapping_pos = end_center
-
-        # Update the arrow end position
-        creating_arrow.start_pos = arrow_start_pos
-        creating_arrow.end_pos = snapping_pos if snapping_pos else (mouse_x, mouse_y)
-        creating_arrow.draw(screen)
-
-        # Finish arrow creation when the mouse is released
-        if not pygame.mouse.get_pressed()[0]:
-            if snapping_pos:
-                # Snap to the edge and complete the arrow
-                for placed_tile, placed_x, placed_y in placed_tiles:
-                    placed_center_top = (placed_x + TILE_SIZE // 2, placed_y)
-                    placed_center_bottom = (placed_x + TILE_SIZE // 2, placed_y + TILE_SIZE)
-                    placed_center_left = (placed_x, placed_y + TILE_SIZE // 2)
-                    placed_center_right = (placed_x + TILE_SIZE, placed_y + TILE_SIZE // 2)
-
-                    placed_edges = {
-                        "top": placed_center_top,
-                        "bottom": placed_center_bottom,
-                        "left": placed_center_left,
-                        "right": placed_center_right,
-                    }
-
-                    for end_edge, end_center in placed_edges.items():
-                        if snapping_pos == end_center:
-                            creating_arrow.end_tile = placed_tile
-                            creating_arrow.end_edge = end_edge
-                            creating_arrow.end_pos = end_center
-                            arrows.append(creating_arrow)  # Add the completed arrow to the list
-                            creating_arrow = None  # Reset arrow creation
-                            return
-
-            # If no valid end circle is detected, cancel the arrow creation
-            creating_arrow = None
-
-
-def ruleset_Screen():
-    global scroll_offset, is_scrolling, dragging_tile, dragging_offset, placed_tiles, creating_arrow
-
-    # Rectangle for the menu
-    selection_x = 100
-    selection_height = 400
-    selection_width = 100
-    selection_y = (screen.get_height() - selection_height) / 2
-    
-    # Inner area for clipping images
-    inner_rect = pygame.Rect(selection_x, selection_y, selection_width, selection_height)
-    pygame.draw.rect(screen, (0, 0, 0), inner_rect)  # Background for the inner rect
-
-    # Calculate and draw tile pairs inside the rectangle
-    tile_size = TILE_SIZE  # Using global TILE_SIZE for tiles
-    spacing = 4  # Space between tiles and rows
-    tiles_per_row = 2  # Number of tiles per row
-    pair_width = tiles_per_row * tile_size + (tiles_per_row - 1) * spacing  # Total width of a pair
-
-    # Calculate horizontal offset to center the pairs
-    horizontal_offset = (selection_width - pair_width) // 2
-    
-    # Calculate vertical placement of pairs
-    y_offset = selection_y + scroll_offset
-    for idx, tile in enumerate(all_tiles):
-        row = idx // tiles_per_row  # Determine the row index
-        col = idx % tiles_per_row  # Determine the column index
-
-        # Calculate position of the tile
-        tile_x = selection_x + horizontal_offset + col * (tile_size + spacing)
-        tile_y = y_offset + row * (tile_size + spacing)
-        
-        # Only draw the tile if it's not being dragged
-        if not (dragging_tile and dragging_tile[0] == tile):
-            screen.blit(tile.image, (tile_x, tile_y))
-
-        # Detect drag start only if no arrow is being created
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        tile_rect = pygame.Rect(tile_x, tile_y, tile_size, tile_size)
-        if tile_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0] and not dragging_tile and not creating_arrow:
-            # Start dragging the tile from the menu
-            dragging_tile = (tile, tile_x, tile_y)  # Store tile and original position
-            dragging_offset = (mouse_x - tile_x, mouse_y - tile_y)
-    
-    # Draw the outline of the menu
-    pygame.draw.rect(screen, (255, 255, 255), (selection_x, selection_y, selection_width, selection_height), 3)
-
-    # Handle dragging logic
-    if dragging_tile:
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        tile_x = mouse_x - dragging_offset[0]
-        tile_y = mouse_y - dragging_offset[1]
-        screen.blit(dragging_tile[0].image, (tile_x, tile_y))  # Draw dragged tile at new position
-
-        # Draw circles and outlines for the dragged tile
-        draw_tile_features(dragging_tile[0], tile_x, tile_y)
-
-        # Check if the mouse button is released to place the tile
-        if not pygame.mouse.get_pressed()[0]:
-            # Check if dragging from menu or repositioning a placed tile
-            if dragging_tile in placed_tiles:
-                # Update the position of the tile being moved
-                placed_tiles.remove(dragging_tile)
-            placed_tiles.append((dragging_tile[0], tile_x, tile_y))  # Add tile to placed tiles
-            dragging_tile = None  # Stop dragging
-
-    # Draw all placed tiles
-    for tile, x, y in placed_tiles:
-        screen.blit(tile.image, (x, y))
-        draw_tile_features(tile, x, y)  # Draw circles and outlines
-
-    # Handle scrolling when the mouse is inside the rectangle
-    mouse_x, mouse_y = pygame.mouse.get_pos()
-    is_scrolling = inner_rect.collidepoint(mouse_x, mouse_y)  # Check if the mouse is inside the box
-    
-    # Scrollbar Logic
-    total_content_height = ((len(all_tiles) + 1) // tiles_per_row) * (tile_size + spacing)  # Total height of all rows
-    if total_content_height > selection_height:
-        # Scrollbar dimensions
-        scrollbar_width = 10
-        scrollbar_x = selection_x + selection_width - scrollbar_width
-        scrollbar_height = selection_height * (selection_height / total_content_height)
-        scrollbar_y = selection_y + (-scroll_offset / total_content_height) * selection_height
-
-        # Draw the scrollbar
-        pygame.draw.rect(screen, (200, 200, 200), (scrollbar_x, selection_y, scrollbar_width, selection_height))
-        pygame.draw.rect(screen, (100, 100, 100), (scrollbar_x, scrollbar_y, scrollbar_width, scrollbar_height))
-
-
-
 class Arrow:
-    def __init__(self, start_tile, start_edge, end_tile=None, end_edge=None):
-        """
-        Arrow class to represent an arrow connecting two tile edges.
-        """
-        self.start_tile = start_tile  # The tile where the arrow starts
-        self.start_edge = start_edge  # The edge of the starting tile
-        self.end_tile = end_tile  # The tile where the arrow ends
-        self.end_edge = end_edge  # The edge of the ending tile
-        self.start_pos = None  # Start position (center of the edge) in screen coordinates
-        self.end_pos = None  # End position (center of the edge) in screen coordinates
+    def __init__(self, start_tile_id, start_edge, end_tile_id=None, end_edge=None):
+        self.start_tile_id = start_tile_id
+        self.start_edge = start_edge
+        self.end_tile_id = end_tile_id
+        self.end_edge = end_edge
+        self.start_pos = None
+        self.end_pos = None
 
     def draw(self, screen):
-        """
-        Draw the arrow on the screen.
-        """
         if self.start_pos and self.end_pos:
-            # Draw the arrow line
             pygame.draw.line(screen, (0, 255, 0), self.start_pos, self.end_pos, 2)
-
-            # Draw the arrowhead
             arrow_length = 10
-            angle = math.atan2(self.end_pos[1] - self.start_pos[1], self.end_pos[0] - self.start_pos[0])
+            angle = math.atan2(self.end_pos[1] - self.start_pos[1],
+                               self.end_pos[0] - self.start_pos[0])
             arrow_tip = self.end_pos
             arrow_left = (arrow_tip[0] - arrow_length * math.cos(angle - math.pi / 6),
                           arrow_tip[1] - arrow_length * math.sin(angle - math.pi / 6))
             arrow_right = (arrow_tip[0] - arrow_length * math.cos(angle + math.pi / 6),
                            arrow_tip[1] - arrow_length * math.sin(angle + math.pi / 6))
-            pygame.draw.polygon(screen, (0, 255, 0), [arrow_tip, arrow_left, arrow_right])
+            pygame.draw.polygon(screen, (0, 255, 0),
+                                [arrow_tip, arrow_left, arrow_right])
 
-# Store arrows
 arrows = []
+creating_arrow = None
+arrow_start_tile_id = None
+arrow_start_edge = None
+arrow_start_pos = None
 
-# Variables for arrow creation
-creating_arrow = None  # Current arrow being created (instance of Arrow)
-arrow_start_tile = None  # Tile where the arrow starts
-arrow_start_edge = None  # Edge of the starting tile
-arrow_start_pos = None  # Position of the starting circle
+dragging_tile = None
+dragging_offset = (0, 0)
+placed_tiles = []
 
-def draw_tile_features(tile, x, y):
-    """Draw the circles and white outline for a tile, and detect edge clicks for arrows."""
-    global creating_arrow, arrow_start_tile, arrow_start_edge, arrow_start_pos
 
-    # Draw a white outline around the tile
-    pygame.draw.rect(screen, (255, 255, 255), (x, y, TILE_SIZE, TILE_SIZE), 2)
+def handle_scrolling(event):
+    global scroll_offset
+    tiles_per_row = 2
+    tile_size = TILE_SIZE
+    spacing = 4
+    total_content_height = ((len(all_tiles) + 1) // tiles_per_row) * (tile_size + spacing)
+    max_scroll = total_content_height - SELECTION_HEIGHT
 
-    # Calculate the center points of each edge of the tile
-    center_top = (x + TILE_SIZE // 2, y)
-    center_bottom = (x + TILE_SIZE // 2, y + TILE_SIZE)
-    center_left = (x, y + TILE_SIZE // 2)
-    center_right = (x + TILE_SIZE, y + TILE_SIZE // 2)
+    if is_scrolling and total_content_height > SELECTION_HEIGHT:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 4:  # Scroll up
+                scroll_offset += scroll_speed
+            elif event.button == 5:  # Scroll down
+                scroll_offset -= scroll_speed
+        scroll_offset = max(min(scroll_offset, 0), -max_scroll)
 
-    # Edge mappings
-    edges = {
-        "top": center_top,
-        "bottom": center_bottom,
-        "left": center_left,
-        "right": center_right,
-    }
-
-    # Draw circles at the center of each edge and detect clicks
-    circle_color = (255, 0, 0)  # Red color for circles
-    circle_radius = 6
-
-    for edge, center in edges.items():
-        pygame.draw.circle(screen, circle_color, center, circle_radius)
-
-        # Detect clicks for arrow creation
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        circle_rect = pygame.Rect(center[0] - circle_radius, center[1] - circle_radius, circle_radius * 2, circle_radius * 2)
-        if circle_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0]:
-            if not creating_arrow:
-                # Start creating an arrow
-                creating_arrow = Arrow(tile, edge)
-                arrow_start_tile = tile
-                arrow_start_edge = edge
-                arrow_start_pos = center
-
-    # Draw the arrow currently being created
-    if creating_arrow:
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        creating_arrow.start_pos = arrow_start_pos
-        creating_arrow.end_pos = (mouse_x, mouse_y)
-        creating_arrow.draw(screen)
-
-        # Finish arrow creation when the mouse is released
-        if not pygame.mouse.get_pressed()[0]:
-            # Detect the ending circle if the mouse is released over another edge
-            for placed_tile, placed_x, placed_y in placed_tiles:
-                placed_center_top = (placed_x + TILE_SIZE // 2, placed_y)
-                placed_center_bottom = (placed_x + TILE_SIZE // 2, placed_y + TILE_SIZE)
-                placed_center_left = (placed_x, placed_y + TILE_SIZE // 2)
-                placed_center_right = (placed_x + TILE_SIZE, placed_y + TILE_SIZE // 2)
-
-                placed_edges = {
-                    "top": placed_center_top,
-                    "bottom": placed_center_bottom,
-                    "left": placed_center_left,
-                    "right": placed_center_right,
-                }
-
-                for end_edge, end_center in placed_edges.items():
-                    end_circle_rect = pygame.Rect(end_center[0] - circle_radius, end_center[1] - circle_radius,
-                                                  circle_radius * 2, circle_radius * 2)
-                    if end_circle_rect.collidepoint(mouse_x, mouse_y):
-                        # Complete the arrow
-                        creating_arrow.end_tile = placed_tile
-                        creating_arrow.end_edge = end_edge
-                        creating_arrow.end_pos = end_center
-                        arrows.append(creating_arrow)  # Add the completed arrow to the list
-                        creating_arrow = None  # Reset arrow creation
-                        return
-
-            # If no valid end circle is detected, cancel the arrow creation
-            creating_arrow = None
 
 def draw_arrows():
-    """Draw all completed arrows."""
     for arrow in arrows:
-        if arrow.start_tile and arrow.start_edge and arrow.end_tile and arrow.end_edge:
-            # Calculate positions dynamically from the tile and edge
-            start_tile_x, start_tile_y = [
-                placed_tile for placed_tile in placed_tiles if placed_tile[0] == arrow.start_tile
-            ][0][1:3]
-            end_tile_x, end_tile_y = [
-                placed_tile for placed_tile in placed_tiles if placed_tile[0] == arrow.end_tile
-            ][0][1:3]
+        start_found = [(t, x, y, tid) for (t, x, y, tid) in placed_tiles if tid == arrow.start_tile_id]
+        end_found = [(t, x, y, tid) for (t, x, y, tid) in placed_tiles if tid == arrow.end_tile_id]
+
+        if len(start_found) == 1 and len(end_found) == 1:
+            _, start_tile_x, start_tile_y, _ = start_found[0]
+            _, end_tile_x, end_tile_y, _ = end_found[0]
 
             start_edge_pos = {
                 "top": (start_tile_x + TILE_SIZE // 2, start_tile_y),
@@ -416,25 +137,166 @@ def draw_arrows():
             arrow.draw(screen)
 
 
+def draw_tile_features(tile, tile_x, tile_y, tile_id):
+    global creating_arrow, arrow_start_tile_id, arrow_start_edge, arrow_start_pos
 
-def handle_scrolling(event):
-    global scroll_offset
-    tile_size = 16
+    pygame.draw.rect(screen, (255, 255, 255), (tile_x, tile_y, TILE_SIZE, TILE_SIZE), 2)
+
+    center_top = (tile_x + TILE_SIZE // 2, tile_y)
+    center_bottom = (tile_x + TILE_SIZE // 2, tile_y + TILE_SIZE)
+    center_left = (tile_x, tile_y + TILE_SIZE // 2)
+    center_right = (tile_x + TILE_SIZE, tile_y + TILE_SIZE // 2)
+
+    edges = {
+       "top": center_top,
+       "bottom": center_bottom,
+       "left": center_left,
+       "right": center_right,
+    }
+
+    circle_color = (255, 0, 0)
+    circle_radius = 6
+
+    mouse_x, mouse_y = pygame.mouse.get_pos()
+    for edge, center in edges.items():
+        pygame.draw.circle(screen, circle_color, center, circle_radius)
+
+        circle_rect = pygame.Rect(center[0] - circle_radius,
+                                  center[1] - circle_radius,
+                                  circle_radius * 2, circle_radius * 2)
+        
+        if circle_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0]:
+            if not creating_arrow:
+                creating_arrow = Arrow(tile_id, edge)
+                arrow_start_tile_id = tile_id
+                arrow_start_edge = edge
+                arrow_start_pos = center
+
+    # If currently creating an arrow, update and draw it
+    if creating_arrow:
+        snapping_pos = None
+        for (p_tile, p_x, p_y, p_id) in placed_tiles:
+            placed_edges = {
+              "top": (p_x + TILE_SIZE // 2, p_y),
+              "bottom": (p_x + TILE_SIZE // 2, p_y + TILE_SIZE),
+              "left": (p_x, p_y + TILE_SIZE // 2),
+              "right": (p_x + TILE_SIZE, p_y + TILE_SIZE // 2),
+            }
+            for end_edge, end_center in placed_edges.items():
+                end_circle_rect = pygame.Rect(end_center[0] - circle_radius,
+                                              end_center[1] - circle_radius,
+                                              circle_radius * 2, circle_radius * 2)
+                if end_circle_rect.collidepoint(mouse_x, mouse_y):
+                    snapping_pos = end_center
+                    creating_arrow.end_tile_id = p_id
+                    creating_arrow.end_edge = end_edge
+                    break
+
+        creating_arrow.start_pos = arrow_start_pos
+        creating_arrow.end_pos = snapping_pos if snapping_pos else (mouse_x, mouse_y)
+        creating_arrow.draw(screen)
+
+        if not pygame.mouse.get_pressed()[0]:
+            if snapping_pos and creating_arrow.end_tile_id is not None:
+                arrows.append(creating_arrow)
+          
+            creating_arrow = None
+
+
+def ruleset_Screen():
+    global scroll_offset, is_scrolling, dragging_tile, dragging_offset, placed_tiles, creating_arrow
+
+    # Draw the background box for the selection panel
+    inner_rect = pygame.Rect(SELECTION_X, SELECTION_Y, SELECTION_WIDTH, SELECTION_HEIGHT)
+    pygame.draw.rect(screen, (0, 0, 0), inner_rect)
+
+    tile_size = TILE_SIZE
     spacing = 4
     tiles_per_row = 2
+    pair_width = tiles_per_row * tile_size + (tiles_per_row - 1) * spacing
+    horizontal_offset = (SELECTION_WIDTH - pair_width) // 2
+    y_offset = SELECTION_Y + scroll_offset
+
+    mouse_x, mouse_y = pygame.mouse.get_pos()
+
+    # Border around the selection panel
+    pygame.draw.rect(screen, (255, 255, 255),
+                     (SELECTION_X, SELECTION_Y, SELECTION_WIDTH, SELECTION_HEIGHT), 3)
+
+    for idx, tile in enumerate(all_tiles):
+        row = idx // tiles_per_row
+        col = idx % tiles_per_row
+        tile_x = SELECTION_X + horizontal_offset + col * (tile_size + spacing)
+        tile_y = y_offset + row * (tile_size + spacing)
+
+        # Only draw non-dragging tiles
+        screen.blit(tile.image, (tile_x, tile_y))
+
+        tile_rect = pygame.Rect(tile_x, tile_y, tile_size, tile_size)
+
+        # Drag a new tile from the palette
+        if tile_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0] \
+           and not dragging_tile and not creating_arrow:
+            global tile_id_counter
+            tile_id_counter += 1
+
+            # Create a new tile instance for dragging
+            new_tile = Cell(name=tile.name, image_path=None,
+                            top=[], bottom=[], left=[], right=[])
+            new_tile.image = tile.image
+
+            dragging_tile = (new_tile, tile_x, tile_y, tile_id_counter)
+            dragging_offset = (mouse_x - tile_x, mouse_y - tile_y)
+
+    # Draw already placed tiles (and check for arrow endpoints)
+    for p_tile, p_x, p_y, p_id in placed_tiles:
+        screen.blit(p_tile.image, (p_x, p_y))
+        # Don't create arrows if we are currently dragging
+        if not dragging_tile:
+            draw_tile_features(p_tile, p_x, p_y, p_id)
+
+    # If not currently creating an arrow, we can pick up (drag) existing tiles
+    if not creating_arrow:
+        for p_tile, p_x, p_y, p_id in placed_tiles:
+            placed_rect = pygame.Rect(p_x, p_y, TILE_SIZE, TILE_SIZE)
+            if placed_rect.collidepoint(mouse_x, mouse_y) and pygame.mouse.get_pressed()[0] and not dragging_tile:
+                dragging_tile = (p_tile, p_x, p_y, p_id)
+                dragging_offset = (mouse_x - p_x, mouse_y - p_y)
+                placed_tiles.remove((p_tile, p_x, p_y, p_id))
+                break
+
+    # Handle dragging a tile (either from palette or from placed tiles)
+    if dragging_tile:
+        mouse_x, mouse_y = pygame.mouse.get_pos()
+        tile_x_moving = mouse_x - dragging_offset[0]
+        tile_y_moving = mouse_y - dragging_offset[1]
+
+        screen.blit(dragging_tile[0].image, (tile_x_moving, tile_y_moving))
+        draw_tile_features(dragging_tile[0], tile_x_moving, tile_y_moving, dragging_tile[3])
+
+        # On mouse release, place tile in the scene
+        if not pygame.mouse.get_pressed()[0]:
+            # If dropped outside the palette, it is placed
+            if not (SELECTION_X <= mouse_x <= SELECTION_X + SELECTION_WIDTH and
+                    SELECTION_Y <= mouse_y <= SELECTION_Y + SELECTION_HEIGHT):
+                placed_tiles.append((dragging_tile[0], tile_x_moving, tile_y_moving, dragging_tile[3]))
+            dragging_tile = None
+
+    # Check if mouse is over the selection panel for scrolling
+    is_scrolling = inner_rect.collidepoint(mouse_x, mouse_y)
+
+    # If we have more tiles than fit in the panel, draw a scrollbar
     total_content_height = ((len(all_tiles) + 1) // tiles_per_row) * (tile_size + spacing)
-    max_scroll = total_content_height - 400  # Max scroll based on selection_height
+    if total_content_height > SELECTION_HEIGHT:
+        scrollbar_width = 10
+        scrollbar_x = SELECTION_X + SELECTION_WIDTH - scrollbar_width
+        scrollbar_height = SELECTION_HEIGHT * (SELECTION_HEIGHT / total_content_height)
+        scrollbar_y = SELECTION_Y + (-scroll_offset / total_content_height) * SELECTION_HEIGHT
 
-    # Check for scrolling only when the cursor is inside the rectangle
-    if is_scrolling and total_content_height > 400:
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 4:  # Scroll up
-                scroll_offset += scroll_speed
-            elif event.button == 5:  # Scroll down
-                scroll_offset -= scroll_speed
-
-        # Clamp the scrolling to within bounds
-        scroll_offset = max(min(scroll_offset, 0), -max_scroll)
+        pygame.draw.rect(screen, (200, 200, 200),
+                         (scrollbar_x, SELECTION_Y, scrollbar_width, SELECTION_HEIGHT))
+        pygame.draw.rect(screen, (100, 100, 100),
+                         (scrollbar_x, scrollbar_y, scrollbar_width, scrollbar_height))
 
 def init_grid():
     grid = [[Cell("") for _ in range(grid_x)] for _ in range(grid_y)]
@@ -449,33 +311,25 @@ def propagate(x, y):
     cell = grid[y][x]
     if not cell.collapsed:
         return
-
     tile = cell.options[0]
-
     neighbor_offsets = [
-        [0, -1, tile.top], 
-        [0, 1, tile.bottom],
-        [-1, 0, tile.left],
-        [1, 0, tile.right] 
+      [0, -1, tile.top],
+      [0, 1, tile.bottom],
+      [-1, 0, tile.left],
+      [1, 0, tile.right]
     ]
-
-    for offset in neighbor_offsets:
-        offset_x, offset_y, allowed_tiles = offset
-        neighbor_x = x + offset_x
-        neighbor_y = y + offset_y
-
-        if 0 <= neighbor_x < grid_x and 0 <= neighbor_y < grid_y: #nOt out of bounds
-            neighbor = grid[neighbor_y][neighbor_x]
+    for offset_x, offset_y, allowed_tiles in neighbor_offsets:
+        nx = x + offset_x
+        ny = y + offset_y
+        if 0 <= nx < grid_x and 0 <= ny < grid_y:
+            neighbor = grid[ny][nx]
             if neighbor.collapsed:
                 continue
-
             new_options = []
             for option in neighbor.options:
                 if option in allowed_tiles:
                     new_options.append(option)
-
             neighbor.options = new_options
-
 
 def find_lowest_entropy(grid):
     lowest_entropy = float('inf')
@@ -490,21 +344,202 @@ def find_lowest_entropy(grid):
 
 def draw_grid():
     font = pygame.font.Font(None, 24)
-    offset_x = (screen.get_width()-(grid_x*TILE_SIZE))/2
-    offset_y = (screen.get_height()-(grid_y*TILE_SIZE))/2
+    offset_x = (screen.get_width() - (grid_x * TILE_SIZE)) / 2
+    offset_y = (screen.get_height() - (grid_y * TILE_SIZE)) / 2
     for y in range(grid_y):
         for x in range(grid_x):
             cell = grid[y][x]
+            rect_x = x * TILE_SIZE + offset_x
+            rect_y = y * TILE_SIZE + offset_y
             if cell.collapsed:
                 tile = cell.options[0]
-                screen.blit(tile.image, (x * TILE_SIZE + offset_x, y * TILE_SIZE + offset_y))
+                screen.blit(tile.image, (rect_x, rect_y))
             else:
-                pygame.draw.rect(screen, (200, 200, 200), (x * TILE_SIZE + offset_x, y * TILE_SIZE + offset_y, TILE_SIZE, TILE_SIZE), 1)
+                pygame.draw.rect(screen, (200, 200, 200),
+                                 (rect_x, rect_y, TILE_SIZE, TILE_SIZE), 1)
                 text = font.render(str(len(cell.options)), True, (255, 255, 255))
-                screen.blit(text, (x * TILE_SIZE + TILE_SIZE // 4 + offset_x, y * TILE_SIZE + TILE_SIZE // 4 + offset_y))
+                screen.blit(text, (rect_x + TILE_SIZE // 4, rect_y + TILE_SIZE // 4))
 
 
-main_font = pygame.font.SysFont("cambria", 50)
+def generateRulesetFromArrows():
+    global placed_tiles, arrows
+    
+    # Clear existing edges on placed tiles
+    for (tile, _, _, _) in placed_tiles:
+        tile.top = []
+        tile.bottom = []
+        tile.left = []
+        tile.right = []
+
+    # Create dictionary for quick tile look-up
+    placed_tile_dict = {}
+    for (tile, _, _, tile_id) in placed_tiles:
+        placed_tile_dict[tile_id] = tile
+
+    # Now apply all arrows
+    for arrow in arrows:
+        start_id = arrow.start_tile_id
+        end_id = arrow.end_tile_id
+        if start_id in placed_tile_dict and end_id in placed_tile_dict:
+            start_tile = placed_tile_dict[start_id]
+            end_tile = placed_tile_dict[end_id]
+
+            # Forward connection
+            if arrow.start_edge == "top":
+                start_tile.top.append(end_tile)
+            elif arrow.start_edge == "bottom":
+                start_tile.bottom.append(end_tile)
+            elif arrow.start_edge == "left":
+                start_tile.left.append(end_tile)
+            elif arrow.start_edge == "right":
+                start_tile.right.append(end_tile)
+
+            # Reverse connection
+            if arrow.end_edge == "top":
+                end_tile.top.append(start_tile)
+            elif arrow.end_edge == "bottom":
+                end_tile.bottom.append(start_tile)
+            elif arrow.end_edge == "left":
+                end_tile.left.append(start_tile)
+            elif arrow.end_edge == "right":
+                end_tile.right.append(start_tile)
+
+tk_root = Tk()
+tk_root.withdraw()
+tk_root.attributes("-topmost", True)  # Ensure file dialog appears on top
+
+def saveRulesetToFile():
+    # Ensure edges are up to date
+    generateRulesetFromArrows()
+
+    file_path = filedialog.asksaveasfilename(
+        title="Save Ruleset",
+        defaultextension=".json",
+        filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+    )
+    if file_path:
+        try:
+            # Gather tile data
+            tiles_data = []
+            for tile, x, y, tile_id in placed_tiles:
+                tile_info = {
+                    "id": tile_id,
+                    "name": tile.name,
+                    "x": x,
+                    "y": y,
+                    "connections": {
+                        "top": [t.name for t in tile.top],
+                        "bottom": [t.name for t in tile.bottom],
+                        "left": [t.name for t in tile.left],
+                        "right": [t.name for t in tile.right],
+                    }
+                }
+                tiles_data.append(tile_info)
+
+            # Gather arrow data
+            arrows_data = []
+            for arrow in arrows:
+                arrow_info = {
+                    "start_tile_id": arrow.start_tile_id,
+                    "start_edge": arrow.start_edge,
+                    "end_tile_id": arrow.end_tile_id,
+                    "end_edge": arrow.end_edge
+                }
+                if arrow.start_pos is not None:
+                    arrow_info["start_pos"] = {
+                        "x": arrow.start_pos[0],
+                        "y": arrow.start_pos[1]
+                    }
+                else:
+                    arrow_info["start_pos"] = None
+
+                if arrow.end_pos is not None:
+                    arrow_info["end_pos"] = {
+                        "x": arrow.end_pos[0],
+                        "y": arrow.end_pos[1]
+                    }
+                else:
+                    arrow_info["end_pos"] = None
+
+                arrows_data.append(arrow_info)
+
+            # Combine
+            ruleset_data = {
+                "tiles": tiles_data,
+                "arrows": arrows_data
+            }
+
+            # Save to JSON
+            with open(file_path, "w") as file:
+                json.dump(ruleset_data, file, indent=4)
+            print(f"Ruleset saved to {file_path}")
+        except Exception as e:
+            print(f"Error saving ruleset: {e}")
+
+
+def loadRulesetFromFile():
+    file_path = filedialog.askopenfilename(
+        title="Load Ruleset",
+        defaultextension=".json",
+        filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+    )
+    if not file_path:
+        return
+
+    try:
+        with open(file_path, "r") as file:
+            data = json.load(file)
+
+        placed_tiles.clear()
+        arrows.clear()
+
+        # Map tile name -> base tile
+        name_tile_map = {t.name: t for t in all_tiles}
+
+        # Rebuild placed tiles
+        id_to_newcell = {}
+        for tile_info in data["tiles"]:
+            base_tile = name_tile_map.get(tile_info["name"])
+            if not base_tile:
+                print(f"Warning: Tile '{tile_info['name']}' not found in all_tiles.")
+                continue
+
+            new_cell = Cell(
+                name=base_tile.name,
+                image_path=None,
+                top=[], bottom=[], left=[], right=[]
+            )
+            new_cell.image = base_tile.image
+
+            placed_tiles.append((new_cell,
+                                 tile_info["x"],
+                                 tile_info["y"],
+                                 tile_info["id"]))
+            id_to_newcell[tile_info["id"]] = new_cell
+
+        # Rebuild arrows
+        if "arrows" in data:
+            for arrow_data in data["arrows"]:
+                new_arrow = Arrow(
+                    start_tile_id=arrow_data["start_tile_id"],
+                    start_edge=arrow_data["start_edge"],
+                    end_tile_id=arrow_data["end_tile_id"],
+                    end_edge=arrow_data["end_edge"]
+                )
+                sp = arrow_data.get("start_pos")
+                if sp is not None:
+                    new_arrow.start_pos = (sp["x"], sp["y"])
+                ep = arrow_data.get("end_pos")
+                if ep is not None:
+                    new_arrow.end_pos = (ep["x"], ep["y"])
+                arrows.append(new_arrow)
+
+        print(f"Ruleset loaded from {file_path}.")
+    except Exception as e:
+        print(f"Error loading ruleset: {e}")
+
+
+main_font = pygame.font.SysFont("cambria", int(screen_x * 0.03))
 
 class Button():
     def __init__(self, image, x_pos, y_pos, text_input):
@@ -517,32 +552,40 @@ class Button():
         self.text_rect = self.text.get_rect(center=(self.x_pos, self.y_pos))
 
     def update(self):
-       screen.blit(self.image, self.rect)
-       screen.blit(self.text, self.text_rect)
+        screen.blit(self.image, self.rect)
+        screen.blit(self.text, self.text_rect)
 
     def checkForInput(self):
-       position = pygame.mouse.get_pos()
-       if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom) and pygame.mouse.get_pressed()[0]:
-        return True
+        position = pygame.mouse.get_pos()
+        if self.rect.collidepoint(position) and pygame.mouse.get_pressed()[0]:
+            return True
+        return False
 
     def changeColor(self):
         position = pygame.mouse.get_pos()
-        if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
-         self.text = main_font.render(self.text_input, True, "green")
+        if (self.rect.left <= position[0] <= self.rect.right and
+            self.rect.top <= position[1] <= self.rect.bottom):
+            self.text = main_font.render(self.text_input, True, "green")
         else:
-         self.text = main_font.render(self.text_input, True, "white")
+            self.text = main_font.render(self.text_input, True, "white")
 
+
+# Load a button sprite and scale
 button_surface = pygame.image.load("Sprites/button.png")
-button_surface = pygame.transform.scale(button_surface, (250, 120))
+button_surface = pygame.transform.scale(button_surface, (int(0.1*screen_x), int(0.05*screen_y)))
 
-run_button = Button(button_surface,1650,200,"RUN")
-ruleset_button = Button(button_surface,1650,350,"RULESET")
-exit_ruleset_screen_button = Button(button_surface,200,150,"EXIT")
+run_button = Button(button_surface, RUN_BUTTON_POS[0], RUN_BUTTON_POS[1], "RUN")
+ruleset_button = Button(button_surface, RULESET_BUTTON_POS[0], RULESET_BUTTON_POS[1], "RULESET")
+exit_ruleset_screen_button = Button(button_surface, EXIT_BUTTON_POS[0], EXIT_BUTTON_POS[1], "EXIT")
+save_ruleset_button = Button(button_surface, SAVE_BUTTON_POS[0], SAVE_BUTTON_POS[1], "SAVE")
+load_ruleset_button = Button(button_surface, LOAD_BUTTON_POS[0], LOAD_BUTTON_POS[1], "LOAD")
+
 
 running = True
 WFC_running = 0
 ruleset_screen = False
 lowest_entropy_cell = True
+
 while running:
     screen.fill((0, 0, 0))
     draw_grid()
@@ -553,13 +596,18 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_q:
                 running = False
-    
-    if run_button.checkForInput() == True:
+
+        handle_scrolling(event)
+
+    # Check main menu button inputs
+    if run_button.checkForInput():
         WFC_running += 1
-    elif ruleset_button.checkForInput() == True:
+    elif ruleset_button.checkForInput():
         ruleset_screen = True
 
+    # WFC logic if RUN is pressed
     if WFC_running == 1:
+        generateRulesetFromArrows()
         grid = init_grid()
         while lowest_entropy_cell:
             screen.fill((0, 0, 0))
@@ -575,15 +623,16 @@ while running:
         WFC_running = 0
         lowest_entropy_cell = True
 
-    if ruleset_screen == True:
+    # Ruleset screen logic
+    if ruleset_screen:
         exit_ruleset_screen = False
-
         while not exit_ruleset_screen:
             screen.fill((0, 0, 0))
-            if exit_ruleset_screen_button.checkForInput() == True:
+
+            if exit_ruleset_screen_button.checkForInput():
                 exit_ruleset_screen = True
                 ruleset_screen = False
-            
+
             for event in pygame.event.get():
                 handle_scrolling(event)
                 if event.type == pygame.QUIT:
@@ -595,14 +644,27 @@ while running:
                         exit_ruleset_screen = True
                         ruleset_screen = False
                         running = False
+
             ruleset_Screen()
+            draw_arrows()
+
+            # Update and check save/load
+            save_ruleset_button.update()
+            if save_ruleset_button.checkForInput():
+                saveRulesetToFile()
+            
+            load_ruleset_button.update()
+            if load_ruleset_button.checkForInput():
+                loadRulesetFromFile()
+
             exit_ruleset_screen_button.update()
+
             pygame.display.flip()
-                
 
-
+    # Update main buttons
     run_button.update()
     ruleset_button.update()
     pygame.display.flip()
+
 pygame.quit()
 sys.exit()
