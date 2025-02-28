@@ -1,0 +1,468 @@
+{
+    "rulesets": [
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ]
+            }
+        }
+    ],
+    "diagram": {
+        "placed_tiles": [
+            {
+                "id": 4,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                "x": 529,
+                "y": 366,
+                "exclusion_mode": false
+            },
+            {
+                "id": 6,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                "x": 531,
+                "y": 444,
+                "exclusion_mode": false
+            },
+            {
+                "id": 5,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 530,
+                "y": 209,
+                "exclusion_mode": false
+            },
+            {
+                "id": 7,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png",
+                "x": 615,
+                "y": 149,
+                "exclusion_mode": false
+            },
+            {
+                "id": 8,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                "x": 441,
+                "y": 146,
+                "exclusion_mode": false
+            },
+            {
+                "id": 9,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Water.png",
+                "x": 616,
+                "y": 75,
+                "exclusion_mode": false
+            },
+            {
+                "id": 1,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 532,
+                "y": 282,
+                "exclusion_mode": false
+            },
+            {
+                "id": 10,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                "x": 663,
+                "y": 375,
+                "exclusion_mode": false
+            }
+        ],
+        "arrows": [
+            {
+                "start_tile_id": 4,
+                "start_edge": "left",
+                "end_tile_id": 3,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 529,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 369,
+                    "y": 337
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "right",
+                "end_tile_id": 3,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 573,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 413,
+                    "y": 337
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "left",
+                "end_tile_id": 5,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 369,
+                    "y": 337
+                },
+                "end_pos": {
+                    "x": 530,
+                    "y": 231
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "left",
+                "end_tile_id": 6,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 529,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 531,
+                    "y": 466
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "right",
+                "end_tile_id": 6,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 573,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 575,
+                    "y": 466
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "top",
+                "end_tile_id": 3,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 366
+                },
+                "end_pos": {
+                    "x": 391,
+                    "y": 359
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "right",
+                "end_tile_id": 5,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 413,
+                    "y": 337
+                },
+                "end_pos": {
+                    "x": 574,
+                    "y": 231
+                }
+            },
+            {
+                "start_tile_id": 5,
+                "start_edge": "top",
+                "end_tile_id": 8,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 552,
+                    "y": 209
+                },
+                "end_pos": {
+                    "x": 463,
+                    "y": 190
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "bottom",
+                "end_tile_id": 8,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 551,
+                    "y": 410
+                },
+                "end_pos": {
+                    "x": 463,
+                    "y": 146
+                }
+            },
+            {
+                "start_tile_id": 5,
+                "start_edge": "top",
+                "end_tile_id": 7,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 552,
+                    "y": 209
+                },
+                "end_pos": {
+                    "x": 637,
+                    "y": 193
+                }
+            },
+            {
+                "start_tile_id": 7,
+                "start_edge": "left",
+                "end_tile_id": 9,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 615,
+                    "y": 171
+                },
+                "end_pos": {
+                    "x": 616,
+                    "y": 97
+                }
+            },
+            {
+                "start_tile_id": 7,
+                "start_edge": "right",
+                "end_tile_id": 9,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 659,
+                    "y": 171
+                },
+                "end_pos": {
+                    "x": 660,
+                    "y": 97
+                }
+            },
+            {
+                "start_tile_id": 7,
+                "start_edge": "top",
+                "end_tile_id": 8,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 637,
+                    "y": 149
+                },
+                "end_pos": {
+                    "x": 463,
+                    "y": 190
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "right",
+                "end_tile_id": 10,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 413,
+                    "y": 337
+                },
+                "end_pos": {
+                    "x": 653,
+                    "y": 343
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "left",
+                "end_tile_id": 10,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 369,
+                    "y": 337
+                },
+                "end_pos": {
+                    "x": 697,
+                    "y": 343
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "left",
+                "end_tile_id": 10,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 529,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 663,
+                    "y": 397
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "right",
+                "end_tile_id": 10,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 573,
+                    "y": 388
+                },
+                "end_pos": {
+                    "x": 707,
+                    "y": 397
+                }
+            },
+            {
+                "start_tile_id": 1,
+                "start_edge": "left",
+                "end_tile_id": 5,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 532,
+                    "y": 304
+                },
+                "end_pos": {
+                    "x": 530,
+                    "y": 231
+                }
+            },
+            {
+                "start_tile_id": 1,
+                "start_edge": "right",
+                "end_tile_id": 5,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 576,
+                    "y": 304
+                },
+                "end_pos": {
+                    "x": 574,
+                    "y": 231
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "top",
+                "end_tile_id": 1,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 366
+                },
+                "end_pos": {
+                    "x": 554,
+                    "y": 326
+                }
+            },
+            {
+                "start_tile_id": 1,
+                "start_edge": "right",
+                "end_tile_id": 10,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 576,
+                    "y": 304
+                },
+                "end_pos": {
+                    "x": 663,
+                    "y": 397
+                }
+            },
+            {
+                "start_tile_id": 1,
+                "start_edge": "left",
+                "end_tile_id": 10,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 532,
+                    "y": 304
+                },
+                "end_pos": {
+                    "x": 707,
+                    "y": 397
+                }
+            },
+            {
+                "start_tile_id": 6,
+                "start_edge": "bottom",
+                "end_tile_id": 10,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 553,
+                    "y": 488
+                },
+                "end_pos": {
+                    "x": 685,
+                    "y": 375
+                }
+            }
+        ]
+    }
+}

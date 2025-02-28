@@ -1,0 +1,64 @@
+{
+    "rulesets": [
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "left": [],
+                "right": []
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "bottom": [],
+                "left": [],
+                "right": []
+            }
+        }
+    ],
+    "diagram": {
+        "placed_tiles": [
+            {
+                "id": 1,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 631,
+                "y": 374,
+                "exclusion_mode": false,
+                "probability": 70
+            },
+            {
+                "id": 2,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                "x": 623,
+                "y": 510,
+                "exclusion_mode": false,
+                "probability": null
+            }
+        ],
+        "arrows": [
+            {
+                "start_tile_id": 2,
+                "start_edge": "top",
+                "end_tile_id": 1,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 645,
+                    "y": 510
+                },
+                "end_pos": {
+                    "x": 653,
+                    "y": 418
+                }
+            }
+        ]
+    }
+}

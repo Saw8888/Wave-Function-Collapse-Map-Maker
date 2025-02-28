@@ -1,0 +1,152 @@
+{
+    "rulesets": [
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png"
+                ]
+            }
+        }
+    ],
+    "diagram": {
+        "placed_tiles": [
+            {
+                "id": 2,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                "x": 480,
+                "y": 405,
+                "exclusion_mode": false
+            },
+            {
+                "id": 3,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 711,
+                "y": 376,
+                "exclusion_mode": false
+            },
+            {
+                "id": 4,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Ladder.png",
+                "x": 616,
+                "y": 518,
+                "exclusion_mode": false
+            },
+            {
+                "id": 5,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 472,
+                "y": 487,
+                "exclusion_mode": false
+            }
+        ],
+        "arrows": [
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 4,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 524,
+                    "y": 427
+                },
+                "end_pos": {
+                    "x": 616,
+                    "y": 540
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 3,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 524,
+                    "y": 427
+                },
+                "end_pos": {
+                    "x": 711,
+                    "y": 398
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "left",
+                "end_tile_id": 5,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 711,
+                    "y": 398
+                },
+                "end_pos": {
+                    "x": 516,
+                    "y": 509
+                }
+            }
+        ]
+    }
+}

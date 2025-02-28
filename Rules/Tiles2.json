@@ -1,0 +1,2536 @@
+{
+    "rulesets": [
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png"
+                ]
+            }
+        }
+    ],
+    "diagram": {
+        "placed_tiles": [
+            {
+                "id": 2,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 135,
+                "y": 838,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 6,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 82,
+                "y": 767,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 4,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 137,
+                "y": 768,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 5,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 195,
+                "y": 770,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 8,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 82,
+                "y": 917,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 9,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 134,
+                "y": 915,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 7,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 190,
+                "y": 915,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 12,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 19,
+                "y": 840,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 13,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 19,
+                "y": 771,
+                "exclusion_mode": false,
+                "probability": 99
+            },
+            {
+                "id": 3,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 77,
+                "y": 842,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 15,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 199,
+                "y": 837,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 16,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 261,
+                "y": 838,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 19,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 260,
+                "y": 911,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 14,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 20,
+                "y": 914,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 17,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 267,
+                "y": 776,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 21,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 458,
+                "y": 837,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 22,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 395,
+                "y": 837,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 20,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 529,
+                "y": 839,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 23,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 332,
+                "y": 836,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 24,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 530,
+                "y": 769,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 26,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 531,
+                "y": 908,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 27,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 591,
+                "y": 907,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 25,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 591,
+                "y": 841,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 29,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 656,
+                "y": 840,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 30,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 660,
+                "y": 907,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 31,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 658,
+                "y": 774,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 33,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 595,
+                "y": 770,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 32,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 465,
+                "y": 769,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 34,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 530,
+                "y": 709,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 28,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 463,
+                "y": 905,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 35,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 459,
+                "y": 508,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 36,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 394,
+                "y": 508,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 38,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 459,
+                "y": 452,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 39,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 455,
+                "y": 394,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 42,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 379,
+                "y": 397,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 41,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 531,
+                "y": 402,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 43,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 328,
+                "y": 506,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 44,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 266,
+                "y": 509,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 45,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 268,
+                "y": 447,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 46,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 331,
+                "y": 446,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 47,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 458,
+                "y": 575,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 48,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 396,
+                "y": 576,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 49,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 519,
+                "y": 577,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 50,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 595,
+                "y": 445,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 51,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 597,
+                "y": 502,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 52,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 594,
+                "y": 561,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 53,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 525,
+                "y": 505,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 55,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 992,
+                "y": 849,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 56,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 992,
+                "y": 783,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 58,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 1065,
+                "y": 786,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 57,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 921,
+                "y": 782,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 59,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 992,
+                "y": 715,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 61,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 993,
+                "y": 922,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 63,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 1067,
+                "y": 924,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 64,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 925,
+                "y": 927,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 62,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 994,
+                "y": 990,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 65,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 1063,
+                "y": 855,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 66,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 1128,
+                "y": 852,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 67,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 1200,
+                "y": 851,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 68,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 923,
+                "y": 850,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 69,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 864,
+                "y": 847,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 70,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 798,
+                "y": 844,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 74,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 851,
+                "y": 454,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 76,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 917,
+                "y": 523,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 78,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 1046,
+                "y": 524,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 77,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 985,
+                "y": 525,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 80,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 1104,
+                "y": 524,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 81,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 852,
+                "y": 587,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 82,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 776,
+                "y": 589,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 83,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 931,
+                "y": 588,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 71,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 851,
+                "y": 523,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 73,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 921,
+                "y": 454,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 84,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 852,
+                "y": 649,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 86,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 788,
+                "y": 523,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 87,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 728,
+                "y": 524,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 88,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 712,
+                "y": 458,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 89,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 710,
+                "y": 582,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 75,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 779,
+                "y": 457,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 90,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 1149,
+                "y": 141,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 92,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 597,
+                "y": 219,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 95,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 595,
+                "y": 77,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 94,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 534,
+                "y": 222,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 98,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 535,
+                "y": 76,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 99,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 597,
+                "y": 285,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 91,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 596,
+                "y": 148,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 97,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 664,
+                "y": 73,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 100,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 669,
+                "y": 150,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 101,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 739,
+                "y": 150,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 102,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 802,
+                "y": 152,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 93,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 664,
+                "y": 223,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 79,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 850,
+                "y": 388,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 104,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 524,
+                "y": 147,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 105,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 464,
+                "y": 148,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 108,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 469,
+                "y": 219,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 106,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Right_Fence.png",
+                "x": 472,
+                "y": 79,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 109,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 1150,
+                "y": 225,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 110,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 1151,
+                "y": 292,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 111,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 1151,
+                "y": 351,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 112,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 1152,
+                "y": 416,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 113,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 1216,
+                "y": 140,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 114,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 1219,
+                "y": 200,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 116,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 1279,
+                "y": 144,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 119,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Grass.png",
+                "x": 1285,
+                "y": 201,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 120,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Vertical_Fence.png",
+                "x": 1148,
+                "y": 61,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 121,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Right_Fence.png",
+                "x": 1216,
+                "y": 65,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 122,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 1089,
+                "y": 61,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 123,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Top_Left_Fence.png",
+                "x": 1078,
+                "y": 143,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 124,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Horizontal_Fence.png",
+                "x": 1010,
+                "y": 141,
+                "exclusion_mode": false,
+                "probability": null
+            },
+            {
+                "id": 125,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Fences/Bottom_Left_Fence.png",
+                "x": 935,
+                "y": 140,
+                "exclusion_mode": false,
+                "probability": null
+            }
+        ],
+        "arrows": [
+            {
+                "start_tile_id": 2,
+                "start_edge": "left",
+                "end_tile_id": 3,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 135,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 121,
+                    "y": 864
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "top",
+                "end_tile_id": 6,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 157,
+                    "y": 838
+                },
+                "end_pos": {
+                    "x": 104,
+                    "y": 811
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "top",
+                "end_tile_id": 4,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 157,
+                    "y": 838
+                },
+                "end_pos": {
+                    "x": 159,
+                    "y": 812
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "top",
+                "end_tile_id": 5,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 157,
+                    "y": 838
+                },
+                "end_pos": {
+                    "x": 217,
+                    "y": 814
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "bottom",
+                "end_tile_id": 8,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 157,
+                    "y": 882
+                },
+                "end_pos": {
+                    "x": 104,
+                    "y": 917
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "bottom",
+                "end_tile_id": 7,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 157,
+                    "y": 882
+                },
+                "end_pos": {
+                    "x": 212,
+                    "y": 915
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "bottom",
+                "end_tile_id": 9,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 157,
+                    "y": 882
+                },
+                "end_pos": {
+                    "x": 156,
+                    "y": 915
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "left",
+                "end_tile_id": 12,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 135,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 63,
+                    "y": 862
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "left",
+                "end_tile_id": 13,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 135,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 63,
+                    "y": 793
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "left",
+                "end_tile_id": 14,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 135,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 64,
+                    "y": 936
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 15,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 179,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 199,
+                    "y": 859
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 16,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 179,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 261,
+                    "y": 860
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 19,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 179,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 260,
+                    "y": 933
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 17,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 179,
+                    "y": 860
+                },
+                "end_pos": {
+                    "x": 267,
+                    "y": 798
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "left",
+                "end_tile_id": 21,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 529,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 502,
+                    "y": 859
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "left",
+                "end_tile_id": 22,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 529,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 439,
+                    "y": 859
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "left",
+                "end_tile_id": 23,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 529,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 376,
+                    "y": 858
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "top",
+                "end_tile_id": 24,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 839
+                },
+                "end_pos": {
+                    "x": 552,
+                    "y": 813
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "right",
+                "end_tile_id": 25,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 573,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 591,
+                    "y": 863
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "bottom",
+                "end_tile_id": 26,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 551,
+                    "y": 883
+                },
+                "end_pos": {
+                    "x": 553,
+                    "y": 908
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "bottom",
+                "end_tile_id": 28,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 551,
+                    "y": 883
+                },
+                "end_pos": {
+                    "x": 485,
+                    "y": 905
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "bottom",
+                "end_tile_id": 27,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 551,
+                    "y": 883
+                },
+                "end_pos": {
+                    "x": 613,
+                    "y": 907
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "right",
+                "end_tile_id": 29,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 573,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 656,
+                    "y": 862
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "right",
+                "end_tile_id": 30,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 573,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 660,
+                    "y": 929
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "right",
+                "end_tile_id": 31,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 573,
+                    "y": 861
+                },
+                "end_pos": {
+                    "x": 658,
+                    "y": 796
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "top",
+                "end_tile_id": 32,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 839
+                },
+                "end_pos": {
+                    "x": 487,
+                    "y": 813
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "top",
+                "end_tile_id": 33,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 839
+                },
+                "end_pos": {
+                    "x": 617,
+                    "y": 814
+                }
+            },
+            {
+                "start_tile_id": 20,
+                "start_edge": "top",
+                "end_tile_id": 34,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 551,
+                    "y": 839
+                },
+                "end_pos": {
+                    "x": 552,
+                    "y": 753
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "left",
+                "end_tile_id": 36,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 459,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 438,
+                    "y": 530
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "top",
+                "end_tile_id": 38,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 481,
+                    "y": 508
+                },
+                "end_pos": {
+                    "x": 481,
+                    "y": 496
+                }
+            },
+            {
+                "start_tile_id": 38,
+                "start_edge": "top",
+                "end_tile_id": 37,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 481,
+                    "y": 452
+                },
+                "end_pos": {
+                    "x": 481,
+                    "y": 436
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "top",
+                "end_tile_id": 39,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 481,
+                    "y": 508
+                },
+                "end_pos": {
+                    "x": 477,
+                    "y": 438
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "top",
+                "end_tile_id": 42,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 481,
+                    "y": 508
+                },
+                "end_pos": {
+                    "x": 401,
+                    "y": 441
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "top",
+                "end_tile_id": 41,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 481,
+                    "y": 508
+                },
+                "end_pos": {
+                    "x": 553,
+                    "y": 446
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "left",
+                "end_tile_id": 43,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 459,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 372,
+                    "y": 528
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "left",
+                "end_tile_id": 44,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 459,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 310,
+                    "y": 531
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "left",
+                "end_tile_id": 45,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 459,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 312,
+                    "y": 469
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "left",
+                "end_tile_id": 46,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 459,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 375,
+                    "y": 468
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "bottom",
+                "end_tile_id": 47,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 481,
+                    "y": 552
+                },
+                "end_pos": {
+                    "x": 480,
+                    "y": 575
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "bottom",
+                "end_tile_id": 49,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 481,
+                    "y": 552
+                },
+                "end_pos": {
+                    "x": 541,
+                    "y": 577
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "bottom",
+                "end_tile_id": 48,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 481,
+                    "y": 552
+                },
+                "end_pos": {
+                    "x": 418,
+                    "y": 576
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "right",
+                "end_tile_id": 53,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 503,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 525,
+                    "y": 527
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "right",
+                "end_tile_id": 50,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 503,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 595,
+                    "y": 467
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "right",
+                "end_tile_id": 51,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 503,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 597,
+                    "y": 524
+                }
+            },
+            {
+                "start_tile_id": 35,
+                "start_edge": "right",
+                "end_tile_id": 52,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 503,
+                    "y": 530
+                },
+                "end_pos": {
+                    "x": 594,
+                    "y": 583
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "top",
+                "end_tile_id": 57,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 849
+                },
+                "end_pos": {
+                    "x": 943,
+                    "y": 826
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "top",
+                "end_tile_id": 56,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 849
+                },
+                "end_pos": {
+                    "x": 1014,
+                    "y": 827
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "top",
+                "end_tile_id": 58,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 849
+                },
+                "end_pos": {
+                    "x": 1087,
+                    "y": 830
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "top",
+                "end_tile_id": 59,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 849
+                },
+                "end_pos": {
+                    "x": 1014,
+                    "y": 759
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "bottom",
+                "end_tile_id": 60,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 893
+                },
+                "end_pos": {
+                    "x": 1015,
+                    "y": 917
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "bottom",
+                "end_tile_id": 64,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 893
+                },
+                "end_pos": {
+                    "x": 947,
+                    "y": 927
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "bottom",
+                "end_tile_id": 61,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 893
+                },
+                "end_pos": {
+                    "x": 1015,
+                    "y": 922
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "bottom",
+                "end_tile_id": 63,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 893
+                },
+                "end_pos": {
+                    "x": 1089,
+                    "y": 924
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "bottom",
+                "end_tile_id": 62,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1014,
+                    "y": 893
+                },
+                "end_pos": {
+                    "x": 1016,
+                    "y": 990
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "right",
+                "end_tile_id": 65,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1036,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 1063,
+                    "y": 877
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "right",
+                "end_tile_id": 66,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1036,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 1128,
+                    "y": 874
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "right",
+                "end_tile_id": 67,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1036,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 1200,
+                    "y": 873
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "left",
+                "end_tile_id": 68,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 992,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 967,
+                    "y": 872
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "left",
+                "end_tile_id": 69,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 992,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 908,
+                    "y": 869
+                }
+            },
+            {
+                "start_tile_id": 55,
+                "start_edge": "left",
+                "end_tile_id": 70,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 992,
+                    "y": 871
+                },
+                "end_pos": {
+                    "x": 842,
+                    "y": 866
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "top",
+                "end_tile_id": 73,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 873,
+                    "y": 523
+                },
+                "end_pos": {
+                    "x": 943,
+                    "y": 498
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "top",
+                "end_tile_id": 74,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 873,
+                    "y": 523
+                },
+                "end_pos": {
+                    "x": 873,
+                    "y": 498
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "top",
+                "end_tile_id": 75,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 873,
+                    "y": 523
+                },
+                "end_pos": {
+                    "x": 801,
+                    "y": 501
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "right",
+                "end_tile_id": 76,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 895,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 917,
+                    "y": 545
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "right",
+                "end_tile_id": 77,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 895,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 985,
+                    "y": 547
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "right",
+                "end_tile_id": 78,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 895,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 1046,
+                    "y": 546
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "top",
+                "end_tile_id": 79,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 873,
+                    "y": 523
+                },
+                "end_pos": {
+                    "x": 872,
+                    "y": 432
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "right",
+                "end_tile_id": 80,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 895,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 1104,
+                    "y": 546
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "bottom",
+                "end_tile_id": 83,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 873,
+                    "y": 567
+                },
+                "end_pos": {
+                    "x": 953,
+                    "y": 588
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "bottom",
+                "end_tile_id": 81,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 873,
+                    "y": 567
+                },
+                "end_pos": {
+                    "x": 874,
+                    "y": 587
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "bottom",
+                "end_tile_id": 82,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 873,
+                    "y": 567
+                },
+                "end_pos": {
+                    "x": 798,
+                    "y": 589
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "bottom",
+                "end_tile_id": 84,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 873,
+                    "y": 567
+                },
+                "end_pos": {
+                    "x": 874,
+                    "y": 649
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "left",
+                "end_tile_id": 89,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 851,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 754,
+                    "y": 604
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "left",
+                "end_tile_id": 86,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 851,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 832,
+                    "y": 545
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "left",
+                "end_tile_id": 87,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 851,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 772,
+                    "y": 546
+                }
+            },
+            {
+                "start_tile_id": 71,
+                "start_edge": "left",
+                "end_tile_id": 88,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 851,
+                    "y": 545
+                },
+                "end_pos": {
+                    "x": 756,
+                    "y": 480
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "bottom",
+                "end_tile_id": 92,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 618,
+                    "y": 192
+                },
+                "end_pos": {
+                    "x": 619,
+                    "y": 219
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "bottom",
+                "end_tile_id": 94,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 618,
+                    "y": 192
+                },
+                "end_pos": {
+                    "x": 556,
+                    "y": 222
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "bottom",
+                "end_tile_id": 93,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 618,
+                    "y": 192
+                },
+                "end_pos": {
+                    "x": 686,
+                    "y": 223
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "top",
+                "end_tile_id": 95,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 618,
+                    "y": 148
+                },
+                "end_pos": {
+                    "x": 617,
+                    "y": 121
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "top",
+                "end_tile_id": 97,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 618,
+                    "y": 148
+                },
+                "end_pos": {
+                    "x": 686,
+                    "y": 117
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "top",
+                "end_tile_id": 98,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 618,
+                    "y": 148
+                },
+                "end_pos": {
+                    "x": 557,
+                    "y": 120
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "bottom",
+                "end_tile_id": 99,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 618,
+                    "y": 192
+                },
+                "end_pos": {
+                    "x": 619,
+                    "y": 285
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "right",
+                "end_tile_id": 100,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 640,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 669,
+                    "y": 172
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "right",
+                "end_tile_id": 101,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 640,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 739,
+                    "y": 172
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "right",
+                "end_tile_id": 102,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 640,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 802,
+                    "y": 174
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "left",
+                "end_tile_id": 104,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 596,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 568,
+                    "y": 169
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "left",
+                "end_tile_id": 108,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 596,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 513,
+                    "y": 241
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "left",
+                "end_tile_id": 105,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 596,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 508,
+                    "y": 170
+                }
+            },
+            {
+                "start_tile_id": 91,
+                "start_edge": "left",
+                "end_tile_id": 106,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 596,
+                    "y": 170
+                },
+                "end_pos": {
+                    "x": 516,
+                    "y": 101
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "bottom",
+                "end_tile_id": 109,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 185
+                },
+                "end_pos": {
+                    "x": 1172,
+                    "y": 225
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "bottom",
+                "end_tile_id": 110,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 185
+                },
+                "end_pos": {
+                    "x": 1173,
+                    "y": 292
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "bottom",
+                "end_tile_id": 111,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 185
+                },
+                "end_pos": {
+                    "x": 1173,
+                    "y": 351
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "bottom",
+                "end_tile_id": 112,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 185
+                },
+                "end_pos": {
+                    "x": 1174,
+                    "y": 416
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "right",
+                "end_tile_id": 113,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1193,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1216,
+                    "y": 162
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "right",
+                "end_tile_id": 114,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1193,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1219,
+                    "y": 222
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "right",
+                "end_tile_id": 116,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1193,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1279,
+                    "y": 166
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "right",
+                "end_tile_id": 119,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 1193,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1285,
+                    "y": 223
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "top",
+                "end_tile_id": 120,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 141
+                },
+                "end_pos": {
+                    "x": 1170,
+                    "y": 105
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "top",
+                "end_tile_id": 122,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 141
+                },
+                "end_pos": {
+                    "x": 1111,
+                    "y": 105
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "top",
+                "end_tile_id": 121,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 1171,
+                    "y": 141
+                },
+                "end_pos": {
+                    "x": 1238,
+                    "y": 109
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "left",
+                "end_tile_id": 123,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 1149,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1122,
+                    "y": 165
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "left",
+                "end_tile_id": 124,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 1149,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 1054,
+                    "y": 163
+                }
+            },
+            {
+                "start_tile_id": 90,
+                "start_edge": "left",
+                "end_tile_id": 125,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 1149,
+                    "y": 163
+                },
+                "end_pos": {
+                    "x": 979,
+                    "y": 162
+                }
+            }
+        ]
+    }
+}

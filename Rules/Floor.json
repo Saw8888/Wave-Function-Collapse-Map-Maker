@@ -1,0 +1,308 @@
+{
+    "rulesets": [
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png"
+                ]
+            }
+        },
+        {
+            "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+            "exclusion_mode": false,
+            "connections": {
+                "top": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "bottom": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png"
+                ],
+                "left": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ],
+                "right": [
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                    "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png"
+                ]
+            }
+        }
+    ],
+    "diagram": {
+        "placed_tiles": [
+            {
+                "id": 3,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Floor.png",
+                "x": 582,
+                "y": 431,
+                "exclusion_mode": false
+            },
+            {
+                "id": 2,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Wall.png",
+                "x": 582,
+                "y": 526,
+                "exclusion_mode": false
+            },
+            {
+                "id": 4,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                "x": 585,
+                "y": 334,
+                "exclusion_mode": false
+            },
+            {
+                "id": 6,
+                "name": "C:/Users/Main/Downloads/My_code/Wave function collapse/Sprites/Arcade/Background.png",
+                "x": 580,
+                "y": 247,
+                "exclusion_mode": false
+            }
+        ],
+        "arrows": [
+            {
+                "start_tile_id": 2,
+                "start_edge": "top",
+                "end_tile_id": 3,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 604,
+                    "y": 526
+                },
+                "end_pos": {
+                    "x": 604,
+                    "y": 475
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "right",
+                "end_tile_id": 4,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 626,
+                    "y": 453
+                },
+                "end_pos": {
+                    "x": 585,
+                    "y": 356
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "right",
+                "end_tile_id": 4,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 626,
+                    "y": 548
+                },
+                "end_pos": {
+                    "x": 585,
+                    "y": 356
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "left",
+                "end_tile_id": 4,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 582,
+                    "y": 548
+                },
+                "end_pos": {
+                    "x": 629,
+                    "y": 356
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "left",
+                "end_tile_id": 4,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 582,
+                    "y": 453
+                },
+                "end_pos": {
+                    "x": 629,
+                    "y": 356
+                }
+            },
+            {
+                "start_tile_id": 3,
+                "start_edge": "top",
+                "end_tile_id": 4,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 604,
+                    "y": 431
+                },
+                "end_pos": {
+                    "x": 607,
+                    "y": 378
+                }
+            },
+            {
+                "start_tile_id": 2,
+                "start_edge": "bottom",
+                "end_tile_id": 4,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 604,
+                    "y": 570
+                },
+                "end_pos": {
+                    "x": 607,
+                    "y": 334
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "top",
+                "end_tile_id": 5,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 607,
+                    "y": 334
+                },
+                "end_pos": {
+                    "x": 604,
+                    "y": 252
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "right",
+                "end_tile_id": 5,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 629,
+                    "y": 356
+                },
+                "end_pos": {
+                    "x": 626,
+                    "y": 230
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "left",
+                "end_tile_id": 5,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 585,
+                    "y": 356
+                },
+                "end_pos": {
+                    "x": 582,
+                    "y": 230
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "bottom",
+                "end_tile_id": 5,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 607,
+                    "y": 378
+                },
+                "end_pos": {
+                    "x": 604,
+                    "y": 208
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "top",
+                "end_tile_id": 6,
+                "end_edge": "bottom",
+                "start_pos": {
+                    "x": 607,
+                    "y": 334
+                },
+                "end_pos": {
+                    "x": 602,
+                    "y": 291
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "left",
+                "end_tile_id": 6,
+                "end_edge": "right",
+                "start_pos": {
+                    "x": 585,
+                    "y": 356
+                },
+                "end_pos": {
+                    "x": 624,
+                    "y": 269
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "right",
+                "end_tile_id": 6,
+                "end_edge": "left",
+                "start_pos": {
+                    "x": 629,
+                    "y": 356
+                },
+                "end_pos": {
+                    "x": 580,
+                    "y": 269
+                }
+            },
+            {
+                "start_tile_id": 4,
+                "start_edge": "bottom",
+                "end_tile_id": 6,
+                "end_edge": "top",
+                "start_pos": {
+                    "x": 607,
+                    "y": 378
+                },
+                "end_pos": {
+                    "x": 602,
+                    "y": 247
+                }
+            }
+        ]
+    }
+}
